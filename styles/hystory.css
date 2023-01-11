@@ -1,0 +1,142 @@
+/* HISTORY */
+
+.history-holder {
+  display: flex;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 500px) {
+  .history-holder {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+  }
+}
+
+.history-info {
+  padding-bottom: 10rem;
+}
+
+/* HISTORY-TITLE */
+
+.history-title {
+  font-family: "Tinos", serif;
+  font-size: 2.5em;
+  width: max-content;
+  text-align: center;
+  margin: 2.5em auto 0 auto;
+}
+@media screen and (max-width: 500px) {
+  .history-title {
+    margin: 1em auto 0 auto;
+  }
+}
+
+.history-title span {
+  color: #d67e34;
+}
+
+/* HISTORY-DESCRIPTION */
+
+.history-description {
+  color: #656363;
+  font-size: 0.8em;
+  width: 30em;
+  text-align: center;
+  margin: 1em auto 0 auto;
+}
+@media screen and (max-width: 500px) {
+  .history-description {
+    font-size: 1em;
+    width: 20em;
+  }
+}
+
+/* HISTORY-NUMBERS */
+
+.history-numbers {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  width: 12.5em;
+  font-size: 1.7em;
+  color: #bc9060;
+  margin: 1.5em auto 0 auto;
+}
+
+.history-numbers-item span {
+  display: block;
+  font-size: 0.6em;
+  color: #000000;
+}
+
+/* HISTORY-IMAGES */
+
+.history-images {
+  position: relative;
+  width: 24em;
+  height: 35em;
+}
+@media screen and (max-width: 500px) {
+  .history-images {
+    width: 100%;
+  }
+}
+
+.history-images .image-1 {
+  box-shadow: 1em 0 1.5em 0.2em #00000080;
+  z-index: 2;
+  position: absolute;
+  height: 14em;
+  width: 11em;
+  top: 6em;
+  left: 3em;
+}
+@media screen and (max-width: 500px) {
+  .history-images .image-1 {
+    left: -10%;
+    width: 10em;
+  }
+}
+
+.history-images .image-2 {
+  position: absolute;
+  height: 16.5em;
+  width: 11em;
+  top: 2.5em;
+  left: 12em;
+}
+@media screen and (max-width: 500px) {
+  .history-images .image-2 {
+    left: 30%;
+  }
+}
+
+.history-images .image-3 {
+  box-shadow: -1em 0 1.5em 0.2em #00000080;
+  position: absolute;
+  height: 14em;
+  width: 11em;
+  top: 14em;
+  left: 17em;
+}
+@media screen and (max-width: 500px) {
+  .history-images .image-3 {
+    left: 57.5%;
+    width: 10em;
+  }
+}
+
+.history-images .image-4 {
+  z-index: -1;
+  position: absolute;
+  height: 8em;
+  width: 10em;
+  top: 7em;
+  left: 16em;
+}
+@media screen and (max-width: 500px) {
+  .history-images .image-4 {
+    left: 45%;
+  }
+}

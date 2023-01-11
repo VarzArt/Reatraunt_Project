@@ -1,0 +1,85 @@
+/* BOOKING-BANNER */
+
+.booking-banner {
+  background-image: url(/assets/backgrounds/Booking-background.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media screen and (max-width: 500px) {
+  .banner-info {
+    height: 22em;
+  }
+}
+
+/* BOOKING-BANNER-INFO */
+
+.banner-info {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 500px) {
+  .banner-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.banner-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 4em;
+}
+@media screen and (max-width: 500px) {
+  .banner-info-wrapper {
+    margin-left: 0;
+  }
+}
+
+.banner-title {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-family: "Tinos", serif;
+  font-weight: 400;
+  color: #d67e34;
+  font-size: 2.5em;
+}
+@media screen and (max-width: 500px) {
+  .banner-title {
+    font-size: 2.5em;
+  }
+}
+
+.banner-desc {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  color: #ffffff;
+  margin-bottom: 2em;
+}
+@media screen and (max-width: 500px) {
+  .banner-desc {
+    margin-bottom: 1.5em;
+    font-size: 1.4em;
+  }
+}
+
+/* BANNER-BUTTON */
+
+.banner-button {
+  display: flex;
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  margin-right: 7em;
+  font-size: 1.5em;
+}
+@media screen and (max-width: 500px) {
+  .banner-button {
+    margin-right: 0;
+    display: block;
+    margin-left: 0;
+  }
+}

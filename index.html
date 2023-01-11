@@ -1,727 +1,834 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-
-	<title>Restrant</title>
-
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-	<meta name="description" content="Restrant project on HTML, CSS & JS">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<link rel ="icon" href = "/Logos_and_miniatures/Main_logo.png">
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
-	
-
-	<link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-	<link rel="stylesheet" href="main.css">
-
-	<script src="https://kit.fontawesome.com/6808a3d275.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-
-
-	<section class="header">
-
-		<div class="container">
-
-			<div class="booking__successTooltip">
-				Ваша бронь <span>принята</span>!
-				<p>В самое ближайшее время <br>с вами свяжется наш администратор &#129505;</p>
-			</div>
-
-			<div class="header__top">
-
-				<div class="header__top-logo">
-					<img src="/Logos_and_miniatures/Main_logo.png" alt="Restrant_logo">
-				</div>
-
-				<div class="header__top-nav">
-					<button id = "scrollToAbout" class = "header__top-nav-item" href="#">О нас</button>
-					<button id = "scrollToBooking" class = "header__top-nav-item" href="#">Заказать столик</button>
-					<button id = "scrollToMenu" class = "header__top-nav-item" href="#">Меню</button>
-					<button id = "scrollToPhoto" class = "header__top-nav-item" href="#">Фото</button>
-				</div>
-
-				<div class="header__top-cart" data-title = "К сожалению, доставка пока недоступна, но мы усердно над этим работаем!">
-					<a href="#">
-						<img class = "header__top-cart-img" src="/Logos_and_miniatures/Shopping-cart.png" alt="Cart_picture">
-					</a>
-				</div>
-
-				<div class="header__top-phone">
-
-					<div class="header__top-phone-holder">
-
-						<div class="header__top-phone-image">
-							<img src="/Logos_and_miniatures/Mobile-phone.png" alt="">
-						</div>
-
-						<div class="header__top-phone-number">
-							<button class = "header__top-phone-number-num" id = "button-copy" href="#" data-clipboard-text = "+999-888-76-54"><span class="tooltip-phoneNumber" data-title = "Нажмите, чтобы скопировать">+999-888-76-54</span></button>
-						</div>
-
-					</div>
-
-					<div class="header__top-phone-text">
-						Свяжитесь с нами для <br> бронирования
-					</div>
-
-				</div>
-
-				<div class="header__top-btn">
-					<button data-modal-target="#modal-form" class = "header__top-btn-button" href="#"><span>Заказать столик</span></button>
-				</div>
-
-			</div>
-
-			<div class="header-bottom">
-
-				<div class="header-bottom-title">
-
-					Добро пожаловать в <br><span> Наш ресторан!</span>
-
-					<div class="header-bottom-subtitle">
-						ДОМ ЛУЧШЕЙ ЕДЫ
-					</div>
-
-					<div class="header-bottom-button">
-						<a href="https://usadba-restaurant.ru/wp-content/uploads/2021/09/menu-2021-1.pdf" class="header-bottom-btn">
-							<span>ПОКАЗАТЬ МЕНЮ</span>
-						</a>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="reservedForm">
-
-		<div class="modal-form" id = "modal-form">
-
-			<button data-close-button class="booking-close-button">&times;</button>
-
-				<img src="/Logos_and_miniatures/Main_logo.png" alt="" class="form-logo">
-
-			<form action="#" class="form" name = "bookingForm">
-
-				<fieldset>
-					<label class = "form__label" for="inputName" value = "Имя:">Имя:</label>
-					<input class = "form__input" type="text" name = "inputName" required>
-				</fieldset>
-
-				<fieldset>
-					<label class = "form__label" for="inputSurname">Телефон:</label>
-					<input class = "form__input" type="text" name = "inputSurname" required>
-				</fieldset>
-
-				<fieldset>
-					<label class = "form__label" for="date">Выберите дату:</label>
-					<input class = "form__input" type="datetime-local"  name = "inputDate" required>
-				</fieldset>
-
-				<fieldset id = "form__label-number">
-					<label class = "form__label" for="quantityInput">Укажите кол-во гостей:</label>
-						<button class="number-minus" type="button" onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();">-</button>
-						<input class = "form__input" type="number" min="0" value="1" readonly name = "inputQuantity" required>
-						<button class="number-plus" type="button" onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();">+</button>
-				</fieldset>
-
-				<input type="submit" class="form__submit" value="Забронировать стол!">
-
-			</form>
-		</div>
-
-	</section>
-
-
-
-		<div id = "booking-overlay"></div>
-
-
-
-	<section class="cards" id="AboutToScroll">
-
-		<div class="container">
-
-			<div class="cards-holder">
-
-				<div class="card">
-
-					<div class="card-image">
-						<img class = "card-img" src="/Logos_and_miniatures/Klosh.png" alt="Klosh">
-					</div>
-
-					<div class="card-title">
-						Магическая <span>Атмосфера</span>
-					</div>
-
-					<div class="card-desc">
-						В нашем заведении царит магическая атмосфера
-						наполненная вкусными ароматами
-					</div>
-
-				</div>
-
-				<div class="card">
-
-					<div class="card-image">
-						<img class = "card-img" src="/Logos_and_miniatures/Klosh.png" alt="Klosh">
-					</div>
-
-					<div class="card-title">
-						Лучшее качество <span>Еды</span>
-					</div>
-
-					<div class="wrapper-desc">
-
-						<div class="card-desc">
-							Качество нашей <br>
-							Еды - отменное!					
-						</div>
-
-					</div>
-
-				</div>
-
-				<div class="card">
-
-					<div class="card-image">
-						<img class = "card-img" src="/Logos_and_miniatures/Klosh.png" alt="Klosh">
-					</div>
-
-					<div class="card-title">
-						Недорогая <span>Еда</span>
-					</div>
-
-					<div class="card-desc">
-						Стоимость нашей Еды
-						зависит только от ее
-						количества. Качество
-						всегда на высоте!
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="history">
-
-		<div class="container">
-
-			<div class="history-holder">
-
-				<div class="history-info">
-
-					<div class="history-title">
-						Наша <span>История</span>
-					</div>
-
-					<div class="history-description">
-						Как и у любого другого самобытного места, у нас есть своя, особая история. Идея ресторана пришла основателям неожиданно. Во время прогулки по лесу создатель нашего ресторана застрял в сотнях километров от ближайшего населенного пункта. Вдали от цивилизации и связи им пришлось навремя обустровать себе нехитрый быт, добывать и готовить себе еду.
-					</div>
-
-					<div class="history-numbers">
-						
-						<div class="history-numbers-item">
-							93 <span>Напитки</span>
-						</div>
-
-						<div class="history-numbers-item">
-							206 <span>Еда</span>
-						</div>
-
-						<div class="history-numbers-item">
-							71 <span>Закуски</span>
-						</div>
-
-					</div>
-
-				</div>
-				
-				<div class="history-images">
-					<img class = "image-1" src="/History-images/1.png" alt="">
-					<img class = "image-2" src="/History-images/2.png" alt="">
-					<img class = "image-3" src="/History-images/3.png" alt="">
-					<img class = "image-4" src="/History-images/history-background.png" alt="">
-				</div>
-
-			</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="booking-banner" id = "bookingToScroll">
-
-		<div class="container">
-
-			<div class="banner-info">
-
-				<div class="banner-info-wrapper">
-
-					<div class="banner-title">
-						Отпразднуйте в одном из <br>
-						самых лучших ресторанов.
-					</div>
-
-					<div class="banner-desc">
-						Только в этом месяце бизнес-ланч от 250 ₽
-					</div>
-
-				</div>
-
-				<div class="banner-button">
-					<button data-modal-target="#modal-form" class="banner-btn"><span>Заказать столик</span></button>
-				</div>
-
-			</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="dishes">
-
-		<div class="container">
-
-			<div class="dishes-title">
-				Наши <span>Блюда</span>
-			</div>
-
-			<div class="burgers">
-
-				<ul class="main-image">
-					<li class = "slide showing"><img src="/Slideshow/Slideshow1.png" class = "full-img active" alt="Pizza picture"></li>
-					<li class = "slide"><img src="/Slideshow/Slideshow2.png" class = "full-img active" alt="Pizza picture"></li>
-					<li class = "slide"><img src="/Slideshow/Slideshow3.png" class = "full-img active" alt="Pizza picture"></li>
-					<li class = "slide"><img src="/Slideshow/Slideshow4.png" class = "full-img active" alt="Pizza picture"></li>
-					<li class = "slide"><img src="/Slideshow/Slideshow5.png" class = "full-img active" alt="Pizza picture"></li>
-				</ul>
-
-				<div class="dishes-info">
-
-					<div class="burger-item">
-
-						<div class="burger-image">
-							<img src="/Section_Dishes_Pictures/Burger.png" class = 'burger-img' alt="Burger">
-						</div>
-
-						<div class="burger-text">
-							Гамбургер мини <span></span> 220 ₽
-						</div>
-
-					</div>
-
-					<div class="burger-item">
-
-						<div class="burger-image">
-							<img src="/Section_Dishes_Pictures/Burger.png" class = 'burger-img' alt="Burger">
-						</div>
-
-						<div class="burger-text">
-							Гамбургер мини <span></span> 220 ₽
-						</div>
-
-					</div>
-
-					<div class="burger-item">
-
-						<div class="burger-image">
-							<img src="/Section_Dishes_Pictures/Burger.png" class = 'burger-img' alt="Burger">
-						</div>
-
-						<div class="burger-text">
-							Гамбургер мини <span></span> 220 ₽
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="menu" id = "menuToScroll">
-
-		<div class="container">
-
-			<h2 class="menu__header">Наше <span>Меню</span></h2>
-
-				<div class="menu__content-wrapper">
-
-					<div class="menu__content">
-
-						<div class="menu-carousel">
-
-							<div class="swiper-wrapper">
-
-								<div class="swiper-slide menu-carousel__item">
-
-									<div class="menu-carousel__image-wrapper">
-
-										<div class="menu-carousel__image-left">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-										<div class="menu-carousel__image-right">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-									</div>
-
-									<div class="menu-carousel__info" data-title = "К сожалению, доставка пока недоступна, но мы усердно над этим работаем!">
-
-										<div class="menu-carousel__info-header">Гамбургер макси</div>
-
-										<p>Максимально толстый <br> 
-											слой мяса</p>
-
-										<div class="menu-carousel__info-button">
-											<button class="menu-carousel__info-btn"><span>ЗАКАЗАТЬ</span></button>
-										</div>
-
-										<div class="menu-carousel__info-price">
-											<p>420</p>
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="swiper-slide menu-carousel__item">
-
-									<div class="menu-carousel__image-wrapper">
-
-										<div class="menu-carousel__image-left">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-										<div class="menu-carousel__image-right">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-									</div>
-
-									<div class="menu-carousel__info" data-title = "К сожалению, доставка пока недоступна, но мы усердно над этим работаем!">
-
-										<div class="menu-carousel__info-header">Гамбургер макси</div>
-
-										<p>Максимально толстый <br> 
-											слой мяса</p>
-
-										<div class="menu-carousel__info-button">
-											<button class="menu-carousel__info-btn"><span>ЗАКАЗАТЬ</span></button>
-										</div>
-										
-										<div class="menu-carousel__info-price">
-											<p>420</p>
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="swiper-slide menu-carousel__item">
-
-									<div class="menu-carousel__image-wrapper">
-
-										<div class="menu-carousel__image-left">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-										<div class="menu-carousel__image-right">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-									</div>
-
-									<div class="menu-carousel__info" data-title = "К сожалению, доставка пока недоступна, но мы усердно над этим работаем!">
-
-										<div class="menu-carousel__info-header">Гамбургер макси</div>
-
-										<p>Максимально толстый <br> 
-											слой мяса</p>
-
-										<div class="menu-carousel__info-button">
-											<button class="menu-carousel__info-btn"><span>ЗАКАЗАТЬ</span></button>
-										</div>
-										
-										<div class="menu-carousel__info-price">
-											<p>420</p>
-										</div>
-
-									</div>
-
-								</div>
-
-								<div class="swiper-slide menu-carousel__item">
-
-									<div class="menu-carousel__image-wrapper">
-
-										<div class="menu-carousel__image-left">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-										<div class="menu-carousel__image-right">
-											<div class="menu-carousel__image"></div>
-										</div>
-
-									</div>
-
-									<div class="menu-carousel__info" data-title = "К сожалению, доставка пока недоступна, но мы усердно над этим работаем!">
-
-										<div class="menu-carousel__info-header">Гамбургер макси</div>
-
-										<p>Максимально толстый <br> 
-											слой мяса</p>
-
-										<div class="menu-carousel__info-button">
-											<button class="menu-carousel__info-btn"><span>ЗАКАЗАТЬ</span></button>
-										</div>
-										
-										<div class="menu-carousel__info-price">
-											<p>420</p>
-										</div>
-
-									</div>
-
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="menu-navigation">
-
-							<div class="menu-navigation__next"></div>
-
-							<div class="menu-navigation__prev"></div>
-
-						</div>
-
-					</div>
-
-				</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="feedback">
-
-		<div class="container">
-
-			<div class="feedbacks">
-
-				<div class="feedback-content active" id = "content-1">
-
-					<div class="feedback-content__text">
-						Я надолго запомню мой День рождения, проведённый в этом ресторане! Кусочек родной Армении!!! Отдельное спасибо за комплемент в виде фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям и родственникам также за рубежом, путешествующих в Санкт-Петербург!!!
-					</div>
-
-					<div class="feedback-content__image">
-						<img src="/Revewies_section_pictures/Bearded-man.png" class = "feedback-content__image-img" alt="bearded-man">
-					</div>
-
-					<div class="feedback-content__user-type">
-						Посетитель
-					</div>
-
-					<div class="feedback-content__user-name">
-						Николай
-					</div>
-
-				</div>
-
-				<div class="feedback-content" id = "content-2">
-
-					<div class="feedback-content__text">
-						Я надолго запомню мой День рождения, проведённый в этом ресторане! Кусочек родной Армении!!! Отдельное спасибо за комплемент в виде фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям и родственникам также за рубежом, путешествующих в Санкт-Петербург!!!
-					</div>
-
-					<div class="feedback-content__image">
-						<img src="/Revewies_section_pictures/Bearded-man.png" class = "feedback-content__image-img" alt="bearded-man">
-					</div>
-
-					<div class="feedback-content__user-type">
-						Посетитель
-					</div>
-
-					<div class="feedback-content__user-name">
-						Владимир
-					</div>
-
-				</div>
-
-				<div class="feedback-content" id = "content-3">
-
-					<div class="feedback-content__text">
-						Я надолго запомню мой День рождения, проведённый в этом ресторане! Кусочек родной Армении!!! Отдельное спасибо за комплемент в виде фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям и родственникам также за рубежом, путешествующих в Санкт-Петербург!!!
-					</div>
-
-					<div class="feedback-content__image">
-						<img src="/Revewies_section_pictures/Bearded-man.png" class = "feedback-content__image-img" alt="bearded-man">
-					</div>
-
-					<div class="feedback-content__user-type">
-						Посетитель
-					</div>
-
-					<div class="feedback-content__user-name">
-						Игорь
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="feedback-navigation">
-
-				<div class="feedback-radiobuttons">
-
-					<div class="feedback-radiobuttons__item">
-						<input type="radio" class="radio__input" name = "nameradio" value="1"  id = "radio-1" checked>
-						<label class="radio__label" for = "radio-1"></label>
-					</div>
-
-					<div class="feedback-radiobuttons__item">
-						<input type="radio" class="radio__input" name = "nameradio" value="2" id = "radio-2" >
-						<label class="radio__label" for = "radio-2"></label>
-					</div>
-
-					<div class="feedback-radiobuttons__item">
-						<input type="radio" class="radio__input" name = "nameradio" value="3" id = "radio-3" >
-						<label class="radio__label" for = "radio-3"></label>
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="gallery" id = "photoToScroll">
-
-		<div class="overlay">	</div>
-
-			<div class="modal">
-				<i id = "close" class="fa-sharp fa-solid fa-xmark"></i>
-				<img src="" alt="" id="active-image">
-				<i id = "left" class="fa-solid fa-chevron-left"></i>
-				<i id = "right" class="fa-solid fa-chevron-right"></i>
-			</div>
-
-		<div class="container">
-
-			<div class="gallery-title">
-				Галерея <span>Блюд</span>
-			</div>
-
-			<div class="galery-photoes">
-				<img src="/Gallery_photoes/Gallery-photo1.jpg" alt="glasses" class = "galery-photo">
-				<img src="/Gallery_photoes/Gallery-photo2.jpg" alt="cup_of_coffe" class = "galery-photo">
-				<img src="/Gallery_photoes/Gallery-photo3.jpg" alt="borsch" class = "galery-photo">
-				<img src="/Gallery_photoes/Gallery-photo4.jpg" alt="cup_of_coffe" class = "galery-photo">
-				<img src="/Gallery_photoes/Gallery-photo5.jpg" alt="borsch" class = "galery-photo">
-				<img src="/Gallery_photoes/Gallery-photo6.jpg" alt="glasses" class = "galery-photo">
-			</div>
-
-		</div>
-
-	</section>
-
-
-
-	<section class="footer">
-
-		<div class="footer__content">
-
-			<div class="footer__content-logo">
-				<img src="/Logos_and_miniatures/Main_logo.png" alt="">
-			</div>
-
-			<div class="footer__content-contacts">
-
-				<span>Контакты:</span>
-
-				<div class="footer__content-contacts-number">
-					<i class="fa-solid fa-mobile"></i>
-					+999-888-76-54
-				</div>
-
-				<div class="footer__content-contacts-adress">
-					<i class="fa-sharp fa-solid fa-location-dot"></i>
-					ул. Рубинштейна, д.11
-				</div>
-
-				<div class="footer__content-contacts-mail">
-					<i class="fa-solid fa-at"></i>
-					house@gmail.com
-				</div>
-
-			</div>
-
-			<div class="footer__content-media">
-				<button href="#" class = "footer__content-media-inst"></button>
-				<button href="#" class = "footer__content-media-tg"></button>
-				<button href="#" class = "footer__content-media-twitter"></button>
-			</div>
-
-			<div class="footer__content-text">Мы всегда <span>Вам</span> рады!</div>
-
-		</div>
-
-	</section>
-
-	<script src="/libs/clipboard.js-master/dist/clipboard.min.js"></script>
-	<script src="/libs/swiper/swiper-bundle.min.js"></script>
-	<script src="app.js"></script>
-
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Restrant</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <meta name="description" content="Restrant project on HTML, CSS & JS" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" href="/Logos_and_miniatures/Main_logo.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="libs/swiper/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/booking/bookingForm.css" />
+    <link rel="stylesheet" href="/styles/header/header.css" />
+    <link rel="stylesheet" href="/styles/header/headerCards.css" />
+    <link rel="stylesheet" href="/styles/hystory.css" />
+    <link rel="stylesheet" href="/styles/booking/bookingBanner.css" />
+    <link rel="stylesheet" href="/styles/ourDishes.css" />
+    <link rel="stylesheet" href="/styles/swiperMenu.css" />
+    <link rel="stylesheet" href="/styles/feedback.css" />
+    <link rel="stylesheet" href="/styles/gallery.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+
+    <script
+      src="https://kit.fontawesome.com/6808a3d275.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <section class="header">
+      <div class="container">
+        <div class="booking__successTooltip">
+          Ваша бронь <span>принята</span>!
+          <p>
+            В самое ближайшее время <br />с вами свяжется наш администратор
+            &#129505;
+          </p>
+        </div>
+
+        <div class="header__top">
+          <div class="header__top-logo">
+            <img
+              src="/assets/Logos_and_miniatures/Main_logo.png"
+              alt="Restrant_logo"
+            />
+          </div>
+
+          <div class="header__top-nav">
+            <a class="header__top-nav-item" href="#AboutToScroll">О нас</a>
+            <a class="header__top-nav-item" href="#BookingToScroll"
+              >Заказать столик</a
+            >
+            <a class="header__top-nav-item" href="#MenuToScroll">Меню</a>
+            <a class="header__top-nav-item" href="#PhotoToScroll">Фото</a>
+          </div>
+
+          <div
+            class="header__top-cart"
+            data-title="К сожалению, доставка пока недоступна, но мы усердно над этим работаем!"
+          >
+            <a href="#">
+              <img
+                class="header__top-cart-img"
+                src="/assets/Logos_and_miniatures/Shopping-cart.png"
+                alt="Cart_picture"
+              />
+            </a>
+          </div>
+
+          <div class="header__top-phone">
+            <div class="header__top-phone-holder">
+              <div class="header__top-phone-image">
+                <img
+                  src="/assets/Logos_and_miniatures/Mobile-phone.png"
+                  alt=""
+                />
+              </div>
+
+              <div class="header__top-phone-number">
+                <button
+                  class="header__top-phone-number-num"
+                  id="button-copy"
+                  href="#"
+                  data-clipboard-text="+999-888-76-54"
+                >
+                  <span
+                    class="tooltip-phoneNumber"
+                    data-title="Нажмите, чтобы скопировать"
+                    >+999-888-76-54</span
+                  >
+                </button>
+              </div>
+            </div>
+
+            <div class="header__top-phone-text">
+              Свяжитесь с нами для <br />
+              бронирования
+            </div>
+          </div>
+
+          <div class="header__top-btn">
+            <button
+              data-modal-target="#modal-form"
+              class="obliqueButton"
+              href="#"
+            >
+              <span>Заказать столик</span>
+            </button>
+          </div>
+
+          <div class="header__top_menuBtn">
+            <div class="header__top_menuBtn-nav">
+              <a class="header__top_menuBtn-nav-item" href="#AboutToScroll"
+                >О нас</a
+              >
+              <a
+                class="header__top_menuBtn-nav-item"
+                data-modal-target="#modal-form"
+                >Заказать столик</a
+              >
+              <a class="header__top_menuBtn-nav-item" href="#MenuToScroll"
+                >Меню</a
+              >
+              <a class="header__top_menuBtn-nav-item" href="#PhotoToScroll"
+                >Фото</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="header-bottom">
+          <div class="header-bottom-title">
+            Добро пожаловать в <br /><span> Наш ресторан!</span>
+
+            <div class="header-bottom-subtitle">ДОМ ЛУЧШЕЙ ЕДЫ</div>
+
+            <div class="header-bottom-button">
+              <a
+                href="https://usadba-restaurant.ru/wp-content/uploads/2021/09/menu-2021-1.pdf"
+                class="header-bottom-btn"
+              >
+                <span>ПОКАЗАТЬ МЕНЮ</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reservedForm">
+      <div class="modal-form" id="modal-form">
+        <button data-close-button class="booking-close-button">&times;</button>
+
+        <img
+          src="/assets/Logos_and_miniatures/Main_logo.png"
+          alt=""
+          class="form-logo"
+        />
+
+        <form action="#" class="form" name="bookingForm">
+          <fieldset>
+            <label class="form__label" for="inputName" value="Имя:">Имя:</label>
+            <input class="form__input" type="text" name="inputName" required />
+          </fieldset>
+
+          <fieldset>
+            <label class="form__label" for="inputSurname">Телефон:</label>
+            <input
+              class="form__input"
+              type="text"
+              name="inputSurname"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <label class="form__label" for="date">Дата:</label>
+            <input
+              class="form__input"
+              type="datetime-local"
+              name="inputDate"
+              required
+            />
+          </fieldset>
+
+          <fieldset id="form__label-number">
+            <label class="form__label" for="quantityInput"
+              >Kол-во гостей:</label
+            >
+            <button
+              class="number-minus"
+              type="button"
+              onclick="this.nextElementSibling.stepDown(); this.nextElementSibling.onchange();"
+            >
+              -
+            </button>
+            <input
+              class="form__input"
+              type="number"
+              min="0"
+              value="1"
+              readonly
+              name="inputQuantity"
+              required
+            />
+            <button
+              class="number-plus"
+              type="button"
+              onclick="this.previousElementSibling.stepUp(); this.previousElementSibling.onchange();"
+            >
+              +
+            </button>
+          </fieldset>
+
+          <input
+            type="submit"
+            class="form__submit"
+            value="Забронировать стол!"
+          />
+        </form>
+      </div>
+    </section>
+
+    <div id="booking-overlay"></div>
+
+    <section class="cards" id="AboutToScroll">
+      <div class="container">
+        <div class="cards-holder">
+          <div class="card">
+            <div class="card-image">
+              <img
+                class="card-img"
+                src="/assets/Logos_and_miniatures/Klosh.png"
+                alt="Klosh"
+              />
+            </div>
+
+            <div class="card-title">Магическая <span>Атмосфера</span></div>
+
+            <div class="card-desc">
+              В нашем заведении царит магическая атмосфера наполненная вкусными
+              ароматами
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                class="card-img"
+                src="/assets/Logos_and_miniatures/Klosh.png"
+                alt="Klosh"
+              />
+            </div>
+
+            <div class="card-title">Лучшее качество <span>Еды</span></div>
+
+            <div class="wrapper-desc">
+              <div class="card-desc">
+                Качество нашей <br />
+                Еды - отменное!
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-image">
+              <img
+                class="card-img"
+                src="/assets/Logos_and_miniatures/Klosh.png"
+                alt="Klosh"
+              />
+            </div>
+
+            <div class="card-title">Недорогая <span>Еда</span></div>
+
+            <div class="card-desc">
+              Стоимость нашей Еды зависит только от ее количества. Качество
+              всегда на высоте!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="history">
+      <div class="container">
+        <div class="history-holder">
+          <div class="history-info">
+            <div class="history-title">Наша <span>История</span></div>
+
+            <div class="history-description">
+              Как и у любого другого самобытного места, у нас есть своя, особая
+              история. Идея ресторана пришла основателям неожиданно. Во время
+              прогулки по лесу создатель нашего ресторана застрял в сотнях
+              километров от ближайшего населенного пункта. Вдали от цивилизации
+              и связи им пришлось навремя обустровать себе нехитрый быт,
+              добывать и готовить себе еду.
+            </div>
+
+            <div class="history-numbers">
+              <div class="history-numbers-item">93 <span>Напитки</span></div>
+
+              <div class="history-numbers-item">206 <span>Еда</span></div>
+
+              <div class="history-numbers-item">71 <span>Закуски</span></div>
+            </div>
+          </div>
+
+          <div class="history-images">
+            <img class="image-1" src="/assets/History-images/1.png" alt="" />
+            <img class="image-2" src="/assets/History-images/2.png" alt="" />
+            <img class="image-3" src="/assets/History-images/3.png" alt="" />
+            <img
+              class="image-4"
+              src="/assets/History-images/history-background.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking-banner" id="BookingToScroll">
+      <div class="container">
+        <div class="banner-info">
+          <div class="banner-info-wrapper">
+            <div class="banner-title">
+              Отпразднуйте в одном из <br />
+              самых лучших ресторанов.
+            </div>
+
+            <div class="banner-desc">
+              Только в этом месяце бизнес-ланч от 250 ₽
+            </div>
+          </div>
+
+          <div class="banner-button">
+            <button data-modal-target="#modal-form" class="obliqueButton">
+              <span>Заказать столик</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="dishes">
+      <div class="container">
+        <div class="dishes-title">Наши <span>Блюда</span></div>
+
+        <div class="burgers">
+          <ul class="main-image">
+            <li class="slide showing">
+              <img
+                src="/assets/Slideshow/Slideshow1.png"
+                class="full-img active"
+                alt="Pizza picture"
+              />
+            </li>
+            <li class="slide">
+              <img
+                src="/assets/Slideshow/Slideshow2.png"
+                class="full-img active"
+                alt="Pizza picture"
+              />
+            </li>
+            <li class="slide">
+              <img
+                src="/assets/Slideshow/Slideshow3.png"
+                class="full-img active"
+                alt="Pizza picture"
+              />
+            </li>
+            <li class="slide">
+              <img
+                src="/assets/Slideshow/Slideshow4.png"
+                class="full-img active"
+                alt="Pizza picture"
+              />
+            </li>
+            <li class="slide">
+              <img
+                src="/assets/Slideshow/Slideshow5.png"
+                class="full-img active"
+                alt="Pizza picture"
+              />
+            </li>
+          </ul>
+
+          <div class="dishes-info">
+            <div class="burger-item">
+              <div class="burger-image">
+                <img
+                  src="/assets/Section_Dishes_Pictures/Burger.png"
+                  class="burger-img"
+                  alt="Burger"
+                />
+              </div>
+
+              <div class="burger-text">Гамбургер мини <span></span> 220 ₽</div>
+            </div>
+
+            <div class="burger-item">
+              <div class="burger-image">
+                <img
+                  src="/assets/Section_Dishes_Pictures/Burger.png"
+                  class="burger-img"
+                  alt="Burger"
+                />
+              </div>
+
+              <div class="burger-text">Гамбургер мини <span></span> 220 ₽</div>
+            </div>
+
+            <div class="burger-item">
+              <div class="burger-image">
+                <img
+                  src="/assets/Section_Dishes_Pictures/Burger.png"
+                  class="burger-img"
+                  alt="Burger"
+                />
+              </div>
+
+              <div class="burger-text">Гамбургер мини <span></span> 220 ₽</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="menu" id="MenuToScroll">
+      <div class="container">
+        <h2 class="menu__header">Наше Меню</h2>
+
+        <div class="menu__content-wrapper">
+          <div class="menu__content">
+            <div class="menu-carousel">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide menu-carousel__item">
+                  <div class="menu-carousel__image-wrapper">
+                    <div class="menu-carousel__image-left">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+
+                    <div class="menu-carousel__image-right">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="menu-carousel__info"
+                    data-title="К сожалению, доставка пока недоступна, но мы усердно над этим работаем!"
+                  >
+                    <div class="menu-carousel__info-header">
+                      Гамбургер макси
+                    </div>
+
+                    <p>
+                      Максимально толстый <br />
+                      слой мяса
+                    </p>
+
+                    <div class="menu-carousel__info-button">
+                      <button class="menu-carousel__info-btn">
+                        <span>ЗАКАЗАТЬ</span>
+                      </button>
+                    </div>
+
+                    <div class="menu-carousel__info-price">
+                      <p>420</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide menu-carousel__item">
+                  <div class="menu-carousel__image-wrapper">
+                    <div class="menu-carousel__image-left">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+
+                    <div class="menu-carousel__image-right">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="menu-carousel__info"
+                    data-title="К сожалению, доставка пока недоступна, но мы усердно над этим работаем!"
+                  >
+                    <div class="menu-carousel__info-header">
+                      Гамбургер макси
+                    </div>
+
+                    <p>
+                      Максимально толстый <br />
+                      слой мяса
+                    </p>
+
+                    <div class="menu-carousel__info-button">
+                      <button class="menu-carousel__info-btn">
+                        <span>ЗАКАЗАТЬ</span>
+                      </button>
+                    </div>
+
+                    <div class="menu-carousel__info-price">
+                      <p>420</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide menu-carousel__item">
+                  <div class="menu-carousel__image-wrapper">
+                    <div class="menu-carousel__image-left">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+
+                    <div class="menu-carousel__image-right">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="menu-carousel__info"
+                    data-title="К сожалению, доставка пока недоступна, но мы усердно над этим работаем!"
+                  >
+                    <div class="menu-carousel__info-header">
+                      Гамбургер макси
+                    </div>
+
+                    <p>
+                      Максимально толстый <br />
+                      слой мяса
+                    </p>
+
+                    <div class="menu-carousel__info-button">
+                      <button class="menu-carousel__info-btn">
+                        <span>ЗАКАЗАТЬ</span>
+                      </button>
+                    </div>
+
+                    <div class="menu-carousel__info-price">
+                      <p>420</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="swiper-slide menu-carousel__item">
+                  <div class="menu-carousel__image-wrapper">
+                    <div class="menu-carousel__image-left">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+
+                    <div class="menu-carousel__image-right">
+                      <div class="menu-carousel__image"></div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="menu-carousel__info"
+                    data-title="К сожалению, доставка пока недоступна, но мы усердно над этим работаем!"
+                  >
+                    <div class="menu-carousel__info-header">
+                      Гамбургер макси
+                    </div>
+
+                    <p>
+                      Максимально толстый <br />
+                      слой мяса
+                    </p>
+
+                    <div class="menu-carousel__info-button">
+                      <button class="menu-carousel__info-btn">
+                        <span>ЗАКАЗАТЬ</span>
+                      </button>
+                    </div>
+
+                    <div class="menu-carousel__info-price">
+                      <p>420</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="menu-navigation">
+              <div class="menu-navigation__next"></div>
+
+              <div class="menu-navigation__prev"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback">
+      <div class="container">
+        <div class="feedbacks">
+          <div class="feedback-content active" id="content-1">
+            <div class="feedback-content__text">
+              Я надолго запомню мой День рождения, проведённый в этом ресторане!
+              Кусочек родной Армении!!! Отдельное спасибо за комплемент в виде
+              фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям
+              и родственникам также за рубежом, путешествующих в
+              Санкт-Петербург!!!
+            </div>
+
+            <div class="feedback-content__image">
+              <img
+                src="/assets/Revewies_section_pictures/Bearded-man.png"
+                class="feedback-content__image-img"
+                alt="bearded-man"
+              />
+            </div>
+
+            <div class="feedback-content__user-type">Посетитель</div>
+
+            <div class="feedback-content__user-name">Николай</div>
+          </div>
+
+          <div class="feedback-content" id="content-2">
+            <div class="feedback-content__text">
+              Я надолго запомню мой День рождения, проведённый в этом ресторане!
+              Кусочек родной Армении!!! Отдельное спасибо за комплемент в виде
+              фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям
+              и родственникам также за рубежом, путешествующих в
+              Санкт-Петербург!!!
+            </div>
+
+            <div class="feedback-content__image">
+              <img
+                src="/assets/Revewies_section_pictures/Bearded-man.png"
+                class="feedback-content__image-img"
+                alt="bearded-man"
+              />
+            </div>
+
+            <div class="feedback-content__user-type">Посетитель</div>
+
+            <div class="feedback-content__user-name">Владимир</div>
+          </div>
+
+          <div class="feedback-content" id="content-3">
+            <div class="feedback-content__text">
+              Я надолго запомню мой День рождения, проведённый в этом ресторане!
+              Кусочек родной Армении!!! Отдельное спасибо за комплемент в виде
+              фруктовой тарелки. Будем рекомендовать этот ресторан своим друзьям
+              и родственникам также за рубежом, путешествующих в
+              Санкт-Петербург!!!
+            </div>
+
+            <div class="feedback-content__image">
+              <img
+                src="/assets/Revewies_section_pictures/Bearded-man.png"
+                class="feedback-content__image-img"
+                alt="bearded-man"
+              />
+            </div>
+
+            <div class="feedback-content__user-type">Посетитель</div>
+
+            <div class="feedback-content__user-name">Игорь</div>
+          </div>
+        </div>
+
+        <div class="feedback-navigation">
+          <div class="feedback-radiobuttons">
+            <div class="feedback-radiobuttons__item">
+              <input
+                type="radio"
+                class="radio__input"
+                name="nameradio"
+                value="1"
+                id="radio-1"
+                checked
+              />
+              <label class="radio__label" for="radio-1"></label>
+            </div>
+
+            <div class="feedback-radiobuttons__item">
+              <input
+                type="radio"
+                class="radio__input"
+                name="nameradio"
+                value="2"
+                id="radio-2"
+              />
+              <label class="radio__label" for="radio-2"></label>
+            </div>
+
+            <div class="feedback-radiobuttons__item">
+              <input
+                type="radio"
+                class="radio__input"
+                name="nameradio"
+                value="3"
+                id="radio-3"
+              />
+              <label class="radio__label" for="radio-3"></label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" id="PhotoToScroll">
+      <div class="overlay"></div>
+
+      <div class="modal">
+        <i id="close" class="fa-sharp fa-solid fa-xmark"></i>
+        <img src="" alt="" id="active-image" />
+        <i id="left" class="fa-solid fa-chevron-left"></i>
+        <i id="right" class="fa-solid fa-chevron-right"></i>
+      </div>
+
+      <div class="container">
+        <div class="gallery-title">Галерея <span>Блюд</span></div>
+        <div class="galery-photoes">
+          <img
+            src="/assets/Gallery_photoes/Gallery-photo1.jpg"
+            alt="glasses"
+            class="galery-photo"
+          />
+          <img
+            src="/assets/Gallery_photoes/Gallery-photo2.jpg"
+            alt="cup_of_coffe"
+            class="galery-photo"
+          />
+          <img
+            src="/assets/Gallery_photoes/Gallery-photo3.jpg"
+            alt="borsch"
+            class="galery-photo"
+          />
+          <img
+            src="/assets/Gallery_photoes/Gallery-photo4.jpg"
+            alt="cup_of_coffe"
+            class="galery-photo"
+          />
+          <img
+            src="/assets/Gallery_photoes/Gallery-photo5.jpg"
+            alt="borsch"
+            class="galery-photo"
+          />
+          <img
+            src="/assets/Gallery_photoes/Gallery-photo6.jpg"
+            alt="glasses"
+            class="galery-photo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="footer">
+      <div class="footer__content">
+        <div class="footer__content-logo">
+          <img src="/assets/Logos_and_miniatures/Main_logo.png" alt="" />
+        </div>
+
+        <div class="footer__content-contacts">
+          <span>Контакты:</span>
+
+          <div class="footer__content-contacts-number">
+            <i class="fa-solid fa-mobile"></i>
+            +999-888-76-54
+          </div>
+
+          <div class="footer__content-contacts-adress">
+            <i class="fa-sharp fa-solid fa-location-dot"></i>
+            ул. Рубинштейна, д.11
+          </div>
+
+          <div class="footer__content-contacts-mail">
+            <i class="fa-solid fa-at"></i>
+            house@gmail.com
+          </div>
+        </div>
+
+        <div class="footer__content-media">
+          <button href="#" class="footer__content-media-inst"></button>
+          <button href="#" class="footer__content-media-tg"></button>
+          <button href="#" class="footer__content-media-twitter"></button>
+        </div>
+
+        <div class="footer__content-text">Мы всегда <span>Вам</span> рады!</div>
+      </div>
+    </section>
+
+    <script src="/libs/clipboard.js-master/dist/clipboard.min.js"></script>
+    <script src="/libs/swiper/swiper-bundle.min.js"></script>
+    <script src="/scripts/tooltips/topCardTooltip.js"></script>
+    <script src="/scripts/tooltips/topNumberTooltip.js"></script>
+    <script src="/scripts/clipboard.js"></script>
+    <script src="/scripts/headerMenu.js"></script>
+    <script src="/scripts/booking/bookingForm.js"></script>
+    <script src="/scripts/booking/bookingFormSubmit.js"></script>
+    <script src="/scripts/slideshow.js"></script>
+    <script src="/scripts/swiper.js"></script>
+    <script src="/scripts/tooltips/menuButtonTooltip.js"></script>
+    <script src="/scripts/reviews.js"></script>
+    <script src="/scripts/gallery.js"></script>
+  </body>
 </html>

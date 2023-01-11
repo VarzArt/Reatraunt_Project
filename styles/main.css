@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 24px;
+  scroll-behavior: smooth;
+}
+@media screen and (min-width: 2200px) {
+  html {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 1700px) {
+  html {
+    font-size: 21px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  html {
+    font-size: 17px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 799px) {
+  html {
+    font-size: 6px;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 8px;
+  }
+}
+@media screen and (max-width: 300px) {
+  html {
+    font-size: 6px;
+  }
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --transition: cubic-bezier(0.4, 0.005, 0, 1);
+}
+
+.container {
+  margin: 0px 7em;
+}
+@media screen and (min-width: 2200px) {
+  .container {
+    margin: 0px 6em;
+  }
+}
+@media screen and (max-width: 1700px) {
+  .container {
+    margin: 0px 6em;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .container {
+    margin: 0px 5em;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .container {
+    margin: 0px 2em;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container {
+    margin: 0px 3em;
+  }
+}
+@media screen and (max-width: 799px) {
+  .container {
+    margin: 0px 6em;
+  }
+}
+
+.obliqueButton {
+  position: relative;
+  background-image: linear-gradient(to bottom, #ff932e, #ff7e14);
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 1.5em;
+  border-radius: 0.2rem 4.2rem / 5rem;
+  font-weight: 700;
+  font-size: 0.8em;
+  opacity: 1;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.obliqueButton span {
+  position: relative;
+  z-index: 1;
+}
+
+.obliqueButton::after {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(
+    #ff932e 0%,
+    #ff7400 35%,
+    #f36a00 50%,
+    #da5600 51%,
+    #ff7e14 100%
+  );
+  color: #fff;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.2rem 4.2rem / 5rem;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.obliqueButton:hover::after {
+  opacity: 1;
+}

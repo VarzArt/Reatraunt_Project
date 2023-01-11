@@ -1,0 +1,180 @@
+/* DISHES */
+
+/* DISHES-TITLE */
+
+.dishes-title {
+  text-align: center;
+  font-family: "Tinos", serif;
+  font-size: 2.5rem;
+  margin: 2em auto;
+}
+@media screen and (max-width: 500px) {
+  .dishes-title {
+    margin: 1em auto;
+    font-size: 4.5rem;
+  }
+}
+
+.dishes-title span {
+  color: #d67e34;
+}
+
+/* DISHES-CONTENT */
+
+.burgers {
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 500px) {
+  .burgers {
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.8em;
+  }
+}
+
+/* DISHES-CONTENT-SLIDE-SHOW */
+
+.main-image {
+  position: relative;
+  width: 25em;
+  height: 25em;
+  margin-bottom: 7em;
+  list-style: none;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 2em 2em, rgba(0, 0, 0, 0.12) 0px -0.5em 1em,
+    rgba(0, 0, 0, 0.12) 0px 0.5em 0.5em, rgba(0, 0, 0, 0.17) 0px 0.5em 0.5em,
+    rgba(0, 0, 0, 0.09) 0px -0.2em 0.2em;
+}
+@media screen and (max-width: 500px) {
+  .main-image {
+    margin-bottom: 5em;
+  }
+}
+
+.main-image li {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 1s;
+}
+
+.showing {
+  opacity: 1;
+  z-index: 2;
+}
+
+.full-img {
+  width: 100%;
+  height: 100%;
+}
+
+/* DISHES-CONTENT-INFO */
+
+.burger-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3.8em;
+}
+@media screen and (max-width: 500px) {
+  .burger-item {
+    margin-bottom: 2em;
+  }
+}
+
+/* DISHES-CONTENT-INFO-IMAGE */
+
+.burger-image {
+  position: relative;
+  width: 8.5em;
+  height: 5.8em;
+  margin-left: 2em;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0.5em 1em 0,
+    rgba(0, 0, 0, 0.1) 0 0.2em 0.3em 0,
+    rgba(255, 255, 255, 0.05) 0 0 0 0.1em inset;
+}
+@media screen and (max-width: 500px) {
+  .burger-image {
+    margin-left: 0;
+  }
+}
+
+.burger-img {
+  width: 8.5em;
+  height: 5.8em;
+}
+
+.burger-image::after {
+  position: absolute;
+  content: "";
+  z-index: -1;
+  background: url(/assets/Section_Dishes_Pictures/Burger.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+  top: 15%;
+  left: 15%;
+  filter: brightness(40%) blur(7px);
+  opacity: 0;
+  transform: translateX(-10%) translateY(-10%);
+  transition: all 0.3s ease;
+}
+
+.burger-image:hover::after {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
+
+/* DISHES-CONTENT-INFO-TEXT */
+
+.burger-text {
+  position: relative;
+  margin-left: 1.5em;
+  font-family: "Tinos", serif;
+  font-size: 1.2em;
+}
+@media screen and (max-width: 500px) {
+  .burger-text {
+    font-size: 1.4em;
+    width: max-content;
+    margin-left: 0.5em;
+  }
+}
+
+.burger-text::after {
+  position: absolute;
+  top: 100%;
+  right: 0%;
+  width: 80%;
+  height: 3px;
+  background-image: linear-gradient(to right, transparent 1%, #ff7e14);
+  content: "";
+  opacity: 1;
+}
+@media screen and (max-width: 799px) {
+  .burger-text::after {
+    height: 1px;
+  }
+}
+
+.burger-text span {
+  display: inline-block;
+  margin-left: 11em;
+}
+@media screen and (max-width: 500px) {
+  .burger-text span {
+    margin-left: 1em;
+  }
+}
