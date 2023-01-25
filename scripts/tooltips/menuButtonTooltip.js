@@ -8,7 +8,7 @@ orderButton.forEach((button) => {
       if (orderItem[i].classList.contains("swiper-slide-active")) {
         orderInfo[i].classList.add("visible");
       }
-      setTimeout(function () {
+      setTimeout(() => {
         orderInfo[i].classList.remove("visible");
       }, 2000);
     }

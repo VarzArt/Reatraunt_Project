@@ -5,7 +5,7 @@ const activeImage = document.querySelector("#active-image");
 const closeIcon = document.querySelector("#close");
 const galery = document.querySelector(".gallery");
 
-let scroll = window.scrollY;
+const scroll = window.scrollY;
 
 imgs.forEach((img) => img.addEventListener("click", displayImage));
 

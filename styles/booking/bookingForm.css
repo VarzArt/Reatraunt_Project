@@ -1,5 +1,3 @@
-/* BOOKING-FORM */
-
 /* BOOKING-SUCCESS-TOOLTIP */
 
 .booking__successTooltip {
@@ -19,6 +17,11 @@
   opacity: 0;
   transition: 300ms ease;
   font-size: 1rem;
+}
+@media screen and (max-width: 900px) {
+  .booking__successTooltip {
+    font-size: 1.5rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .booking__successTooltip {
@@ -57,9 +60,15 @@
   transition: 300ms ease;
   font-size: 1.6rem;
 }
+@media screen and (max-width: 900px) {
+  .modal-form {
+    top: 50%;
+    font-size: 2.5rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .modal-form {
-    top: 17em;
+    top: 50%;
     font-size: 3rem;
   }
 }
@@ -114,6 +123,11 @@ fieldset {
   font-size: 0.5em;
   font-family: "Tinos", serif;
   font-weight: bold;
+}
+@media screen and (max-width: 900px) {
+  .form__label {
+    font-size: 0.75em;
+  }
 }
 
 /* FORM-INPUTS */
@@ -207,7 +221,7 @@ input[type="number"] {
 
 .form__submit {
   height: 100%;
-  width: 100%;
+  width: max-content;
   font-size: 0.9em;
   margin-top: 1.5em;
   margin-right: 0;
@@ -220,6 +234,12 @@ input[type="number"] {
   opacity: 0.5;
   transform: scale(0.6);
   transition: all 0.3s ease;
+}
+@media screen and (max-width: 900px) {
+  .form__submit {
+    margin-top: 0.75em;
+    font-size: 1.25em;
+  }
 }
 
 .form__submit:hover {

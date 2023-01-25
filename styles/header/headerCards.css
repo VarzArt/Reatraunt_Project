@@ -22,6 +22,12 @@
   box-shadow: 0.42rem 0.42rem 1.6rem 0.8rem #0000001a;
   background-color: #fff;
 }
+@media screen and (max-width: 900px) {
+  .card {
+    font-size: 1.5em;
+    height: 16em;
+  }
+}
 @media screen and (max-width: 500px) {
   .card {
     width: 80%;

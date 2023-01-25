@@ -7,7 +7,7 @@
 }
 @media screen and (max-width: 500px) {
   .banner-info {
-    height: 22em;
+    height: 32em;
   }
 }
 
@@ -15,7 +15,7 @@
 
 .banner-info {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 @media screen and (max-width: 500px) {
   .banner-info {
@@ -28,7 +28,6 @@
 .banner-info-wrapper {
   display: flex;
   flex-direction: column;
-  margin-left: 4em;
 }
 @media screen and (max-width: 500px) {
   .banner-info-wrapper {
@@ -43,11 +42,16 @@
   font-family: "Tinos", serif;
   font-weight: 400;
   color: #d67e34;
-  font-size: 2.5em;
+  font-size: 2em;
+}
+@media screen and (max-width: 900px) {
+  .banner-title {
+    font-size: 3em;
+  }
 }
 @media screen and (max-width: 500px) {
   .banner-title {
-    font-size: 2.5em;
+    font-size: 3.5em;
   }
 }
 
@@ -59,10 +63,15 @@
   color: #ffffff;
   margin-bottom: 2em;
 }
+@media screen and (max-width: 900px) {
+  .banner-desc {
+    font-size: 1.5em;
+  }
+}
 @media screen and (max-width: 500px) {
   .banner-desc {
     margin-bottom: 1.5em;
-    font-size: 1.4em;
+    font-size: 2.4em;
   }
 }
 
@@ -73,13 +82,18 @@
   margin-left: auto;
   justify-content: center;
   align-items: center;
-  margin-right: 7em;
-  font-size: 1.5em;
+  font-size: 1.25em;
+}
+@media screen and (max-width: 900px) {
+  .banner-button {
+    font-size: 1.75em;
+  }
 }
 @media screen and (max-width: 500px) {
   .banner-button {
     margin-right: 0;
     display: block;
     margin-left: 0;
+    font-size: 2.75em;
   }
 }

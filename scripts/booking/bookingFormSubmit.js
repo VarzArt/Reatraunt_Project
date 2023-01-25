@@ -7,7 +7,7 @@ const successTooltip = document.querySelector(".booking__successTooltip");
 
 mainForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  setTimeout(function () {
+  setTimeout(() => {
     event.target.reset();
   }, 2000);
 });
@@ -31,7 +31,7 @@ submit.addEventListener("click", () => {
       console.table(key, value);
     });
 
-    setTimeout(function () {
+    setTimeout(() => {
       bookingModal.classList.remove("active");
       bookingOverlay.classList.remove("active");
       successTooltip.classList.remove("visible");

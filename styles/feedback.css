@@ -1,5 +1,3 @@
-/* FEEDBACK */
-
 /* FEEDBACK-MAIN */
 
 .feedback {
@@ -15,11 +13,14 @@
   width: 100%;
   height: 17rem;
 }
+@media screen and (max-width: 900px) {
+  .feedbacks {
+    height: 24rem;
+  }
+}
 @media screen and (max-width: 500px) {
   .feedbacks {
-    position: relative;
-    width: 100%;
-    height: 48em;
+    height: 44em;
   }
 }
 
@@ -61,11 +62,17 @@
   font-style: italic;
   margin-top: 3.5em;
 }
+@media screen and (max-width: 900px) {
+  .feedback-content__text {
+    font-size: 1.5em;
+    width: 100%;
+  }
+}
 @media screen and (max-width: 500px) {
   .feedback-content__text {
     font-size: 2em;
     width: 100%;
-    margin-bottom: 8em;
+    margin-bottom: 4em;
   }
 }
 
@@ -83,6 +90,11 @@
 .feedback-content__image {
   margin-top: 3.5em;
 }
+@media screen and (max-width: 900px) {
+  .feedback-content__image {
+    margin-top: 6em;
+  }
+}
 @media screen and (max-width: 500px) {
   .feedback-content__image {
     margin-top: 6em;
@@ -96,6 +108,12 @@
   font-weight: 600;
   margin-top: 0.2em;
 }
+@media screen and (max-width: 900px) {
+  .feedback-content__user-type,
+  .feedback-content__user-name {
+    font-size: 1.5em;
+  }
+}
 @media screen and (max-width: 500px) {
   .feedback-content__user-type,
   .feedback-content__user-name {
@@ -106,6 +124,11 @@
 .feedback-content__user-name {
   font-weight: 400;
   font-size: 1em;
+}
+@media screen and (max-width: 900px) {
+  .feedback-content__user-name {
+    font-size: 1.5em;
+  }
 }
 @media screen and (max-width: 500px) {
   .feedback-content__user-name {
