@@ -1,80 +1,71 @@
-![mainLogo](/assets/Logos_and_miniatures/Main_logo.png)
+<img src = '/assets/Logos_and_miniatures/Main_logo.png' width = 200px height = 150px>
 
-# RTG - ___Russian Tourist guide___  
-## 1. About project
+# Дом лучшей еды - сайт ресторана. 
 
-The service is aimed at a European audience and has the goal of introducing a potential tourist to the minimum necessary information for traveling around the cities of Russia.
+## 1. О проекте:
 
-The site is adapted to any permissions and is displayed correctly on any type of device.
+Проект представляет собой веб-страницу, созданную для ресторана домашней кухни "Дом лучшей еды". Содержит в себе основную информацию о ресторане, меню, историю, галлерею блюд и несколько полезных опций для бронирования столика или выбора блюда по своему вкусу.
 
-## 2. What the service can offer
+Сайт адаптирован под любые разрешения и отображается корректно на всех видах устройств: 
+- ПК
+- Планшет
+- Телефон
 
-- Interesting information about the city;
-- The best places for cultural (and not so) recreation;
-- Weather forecast in the city of interest;
-- Currency exchanger;
-- Mini-game not to get bored in the process...
+## 2. Особенности проекта:
 
-And much much more!!!
+- Удобная форма для бронирования стола с фиксацией отправленных полей
+ (На данный момент только в console);
+- Слайдшоу с блюдами кухни и не только;
+- Слайдер с позициями ресторана и ценами на них;
+- Галерея профессиональных фотографий с мероприятий ресторана...
 
-## 3. Parts of project
+И многое другое!
 
-1. #### Header
-It contains a navigation menu, an introduction to the service and an interesting Easter egg.
+## 3. Части проекта:
 
-2. #### About page
+1. #### Стартовая страница
 
-Contains basic information about the features provided by the service.
+Блок с названием ресторана, навигационным блоком, контактной информацией и полной версией меню. 
 
-3. #### City-pages (At this moment only Moscow-city)
+2. #### Блок истории
 
-Includes basic information about the city:
+Краткая история от создателей ресторана и бренда в целом, подкрепленная профессиональными фотографиями кухни и интерьера.
 
-- History block;
-- Weather in this city (At the moment, the weather app contains a search, which allows you to find out the weather in absolutely any city);
-- A block with information about bars where you can have a good rest.
+3. #### Блок с блюдами
 
-4. #### Game-page
+Блок представляет собой сочетание слайдшоу и набором самых популярных позиций из меню с указанием их цены.
 
-Here is a small game where you need to paint the Kremlin with a color generator.
+4. #### Блок меню
 
-5. #### Support page 
+Блок состоит из слайдера, в каждом из слайдов которого позиция из меню кухни с изображением, кратким описанием и указанием цены.
 
-A page created for people interested in supporting a project with a beautiful representation of cyberpunk Russia.
+5. #### Блок отзывов
 
-6. #### Currency exchanger 
+Блок с переключаемыми отзывами с указанием имени и статуса человека в данном заведении.
 
-A small bonus in the form of a convenient currency exchanger that supports all known currencies and is updated in real time.
+6. #### Галерея
 
-7. #### Footer 
+Галерея блюд, содержащая как профессиональные фотографии блюд и интерьера, так и фотографии с мероприятий, проходящих в самом ресторане.
 
-Just duplicating navigation and pointing to the creator and designer of the service.
+7. #### Подвал
 
+Данный блок содержит всю необходимую контактную информацию, ссылки на социальные сети и послание будущим гостям.
 
-## 4. Technical component 
+## 4. Техническая составляющая
 
-The project is written using this technology stack:
+Проект был написан с использованием следующих технологий:
 - HTML;
-- CSS (and the preprocessor SCSS);
+- CSS;
 - JavaScript.
 
-The service contains a huge amount of both primitive and complex animation, implemented both with transition and using @keyframes. Also, the design of this project was developed completely from scratch and implemented using both common and not quite popular practices of CSS and SCSS.
+Проект содержит в себе умеренный набор как примитивной, так и нестандартной анимации, реализованной с помощью CSS. Так же в проекте был создан достаточно интересный слайдер с позициями блюд. За логику в проекте отвечает JS, служащий в основном для связи HTML элементов и управления классами. Так же с помощью JavaScript кода реализованы слайдшоу, слайдер и галерея.
 
-The JS is responsible for the logic of the project and it is applied throughout the code in the form of:
+###### Но...
 
-- Synchronous code;
-- Asynchronous code;
-- Micro and macro tasks;
-- Interactions with HTML...
+> ___Не верь речам, а верь своим очам!___
+_Тит Макций Плавт 184 г.д.н.э._
 
-And in many other aspects of the project
-
-###### But...
-
-> ___Don't believe the speeches, but believe your eyes___
-_Titus Maccius Plautus 184 BC_
-
-###### You can see everything for yourself, and your humble servant will modestly wait for the evaluation)
+###### Вы можете увидеть все сами, а ваш покорный слуга скромно подождет оценки)
 
 ---
 
